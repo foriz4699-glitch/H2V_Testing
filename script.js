@@ -43,5 +43,21 @@ const camera = new Camera(videoElement, {
 });
 camera.start();
 
+video.addEventListener("loadedmetadata", () => {
+  // Get real video dimensions
+  const vw = video.videoWidth;
+  const vh = video.videoHeight;
+
+  // Set canvas same as video
+  canvasElement.width = vw;
+  canvasElement.height = vh;
+
+  // Set CSS to scale while keeping aspect ratio
+  video.style.width = "100%";
+  video.style.height = "auto"; // keeps aspect ratio
+  canvasElement.style.width = "100%";
+  canvasElement.style.height = "auto";
+});
+
 
 
