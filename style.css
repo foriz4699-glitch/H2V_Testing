@@ -11,3 +11,9 @@ video, canvas {
   border: 2px solid #333;
   border-radius: 8px;
 }
+
+video, canvas {
+  object-fit: contain; /* preserves original aspect ratio */
+  transform: rotateY(180deg); /* mirror if you want */
+}
+
